@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habits Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="tracker">
+        <header class="tracker__header">
+            <h1 class="tracker__title">Habit tracker</h1>
+            <p class="tracker__subtitle">Трекай свои привычки</p>
+        </header>
+        <section class="tracker__form-section">
+            <form action="" class="form">
+                <input name="habit" type="text" class="form__input">
+                <button class="form__btn">Добавить</button>
+            </form>
+        </section>
+        <nav class="week-nav">
+            <button class="week-nav__btn week-nav__btn--prev">&#8592;</button>
+            <span class="week-nav__label"></span>
+            <button class="week-nav__btn week-nav__btn--next">&#8594;</button>
+        </nav>
+        <section class="tracker__list-section">
+            <ul class="habit-list"></ul>
+                
+        </section>
+    </main>
+</body>
+
+</html>

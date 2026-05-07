@@ -1,0 +1,239 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f5f0eb;
+  --color-surface: #ffffff;
+  --color-accent: #d4622a;
+  --color-text: #1a1a1a;
+  --color-muted: #888;
+  --color-border: #e0d9d1;
+  --color-done: #3a8c5c;
+  --color-done-bg: #e6f4ec;
+  --radius: 10px;
+  --font-main: 'Georgia', serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+
+.week-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+}
+
+.week-nav__btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.week-nav__btn:hover:not(:disabled) {
+  background: var(--color-bg);
+}
+
+.week-nav__btn:disabled {
+  color: var(--color-border);
+  cursor: default;
+}
+
+.week-nav__label {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+
+.tracker {
+  width: 100%;
+  max-width: 560px;
+}
+
+.tracker__header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.tracker__title {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.tracker__subtitle {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.tracker__form-section {
+  margin-bottom: 28px;
+}
+
+.tracker__list-section {
+}
+
+
+.form {
+  display: flex;
+  gap: 8px;
+}
+
+.form__input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  background: var(--color-surface);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form__input:focus {
+  border-color: var(--color-accent);
+}
+
+.form__btn {
+  padding: 12px 20px;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.form__btn:hover {
+  opacity: 0.85;
+}
+
+
+.habit-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.habit {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.habit__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.habit__name {
+  font-size: 1rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.habit__delete {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.habit__delete:hover {
+  color: var(--color-accent);
+}
+
+.habit__days {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.day__label {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day__date {
+  font-size: 0.6rem;
+  color: var(--color-muted);
+}
+
+.day__circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.day--done .day__circle {
+  background: var(--color-done-bg);
+  border-color: var(--color-done);
+  color: var(--color-done);
+}
+
+.day--future {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.day--today .day__label {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.day--today .day__circle {
+  border-color: var(--color-accent);
+}
